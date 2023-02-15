@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/02/14 09:48:32.000.796,=C:\Users\guivr\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 09:49:41.000.532,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPrincipal.dfm=C:\Users\guivr\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/02/14 09:49:41.000.532,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPrincipal.pas=C:\Users\guivr\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 09:49:52.000.810,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\BuffetLucia.dproj=C:\Users\guivr\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/02/14 09:50:38.000.268,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 09:50:47.000.774,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitDm.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm</Transaction>
+    <Transaction>2023/02/14 09:50:47.000.774,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitDm.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 10:02:39.000.105,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 10:03:06.000.269,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPessoas.pas</Transaction>
+    <Transaction>2023/02/14 10:03:06.000.269,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPessoas.dfm</Transaction>
+    <Transaction>2023/02/14 10:43:48.000.481,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 10:44:22.000.095,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitNovaPessoa.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 10:44:22.000.095,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitNovaPessoa.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm</Transaction>
+    <Transaction>2023/02/14 11:28:39.000.780,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 11:29:34.000.178,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitAlimentos.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm</Transaction>
+    <Transaction>2023/02/14 11:29:34.000.178,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitAlimentos.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 18:12:21.000.897,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 18:12:47.000.806,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitAgenda.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 18:12:47.000.806,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitAgenda.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm</Transaction>
+    <Transaction>2023/02/14 20:47:26.000.650,=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 20:47:53.000.656,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPedido.pas=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 20:47:53.000.656,C:\Users\guivr\OneDrive\Delphi\BuffetLucia\UnitPedido.dfm=C:\Users\guivr\OneDrive\Delphi\BuffetLucia\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
