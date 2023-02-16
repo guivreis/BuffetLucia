@@ -2,7 +2,7 @@ object FormPedido: TFormPedido
   Left = 0
   Top = 0
   Caption = 'Pedido do dia'
-  ClientHeight = 402
+  ClientHeight = 421
   ClientWidth = 980
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,54 +15,54 @@ object FormPedido: TFormPedido
   OnShow = FormShow
   DesignSize = (
     980
-    402)
+    421)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 73
-    Top = 85
+    Top = 45
     Width = 79
     Height = 13
     Caption = 'Card'#225'pio do dia:'
   end
   object Label2: TLabel
     Left = 8
-    Top = 107
+    Top = 67
     Width = 30
     Height = 13
     Caption = 'Arroz:'
   end
   object Label3: TLabel
     Left = 8
-    Top = 134
+    Top = 94
     Width = 33
     Height = 13
     Caption = 'Feij'#227'o:'
   end
   object Label4: TLabel
     Left = 8
-    Top = 161
+    Top = 121
     Width = 33
     Height = 13
     Caption = 'Carne:'
   end
   object Label5: TLabel
     Left = 8
-    Top = 188
+    Top = 148
     Width = 52
     Height = 13
     Caption = 'Guarni'#231#227'o:'
   end
   object Label6: TLabel
     Left = 8
-    Top = 215
+    Top = 175
     Width = 36
     Height = 13
     Caption = 'Salada:'
   end
   object Label7: TLabel
     Left = 8
-    Top = 242
+    Top = 202
     Width = 47
     Height = 13
     Caption = '2'#170' op'#231#227'o:'
@@ -89,8 +89,8 @@ object FormPedido: TFormPedido
     Caption = 'Hora:'
   end
   object DateTimePicker1: TDateTimePicker
-    Left = 73
-    Top = 23
+    Left = 8
+    Top = 8
     Width = 97
     Height = 21
     Date = 44971.000000000000000000
@@ -100,7 +100,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit1: TDBEdit
     Left = 72
-    Top = 104
+    Top = 64
     Width = 200
     Height = 21
     DataField = 'OPC1'
@@ -109,7 +109,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit2: TDBEdit
     Left = 72
-    Top = 131
+    Top = 91
     Width = 200
     Height = 21
     DataField = 'OPC2'
@@ -118,7 +118,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit3: TDBEdit
     Left = 72
-    Top = 158
+    Top = 118
     Width = 200
     Height = 21
     DataField = 'OPC3'
@@ -127,7 +127,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit4: TDBEdit
     Left = 72
-    Top = 185
+    Top = 145
     Width = 200
     Height = 21
     DataField = 'OPC4'
@@ -136,7 +136,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit5: TDBEdit
     Left = 72
-    Top = 212
+    Top = 172
     Width = 200
     Height = 21
     DataField = 'OPC5'
@@ -145,7 +145,7 @@ object FormPedido: TFormPedido
   end
   object DBEdit6: TDBEdit
     Left = 72
-    Top = 239
+    Top = 199
     Width = 200
     Height = 21
     DataField = 'OPC6'
@@ -154,7 +154,7 @@ object FormPedido: TFormPedido
   end
   object Button3: TButton
     Left = 72
-    Top = 280
+    Top = 240
     Width = 200
     Height = 33
     Caption = 'Atualizar'
@@ -262,7 +262,7 @@ object FormPedido: TFormPedido
   end
   object Button7: TButton
     Left = 464
-    Top = 351
+    Top = 374
     Width = 88
     Height = 33
     Caption = 'Atualizar'
@@ -315,9 +315,9 @@ object FormPedido: TFormPedido
     OnClick = Button12Click
   end
   object Button13: TButton
-    Left = 728
-    Top = 351
-    Width = 193
+    Left = 680
+    Top = 374
+    Width = 281
     Height = 33
     Anchors = [akLeft, akBottom]
     Caption = 'Copiar texto WhatsApp'
@@ -328,7 +328,7 @@ object FormPedido: TFormPedido
     Left = 680
     Top = 60
     Width = 281
-    Height = 285
+    Height = 308
     Anchors = [akLeft, akTop, akBottom]
     Lines.Strings = (
       '')
@@ -355,25 +355,43 @@ object FormPedido: TFormPedido
   end
   object Button1: TButton
     Left = 352
-    Top = 351
+    Top = 374
     Width = 88
     Height = 33
     Caption = 'Cancelar'
     TabOrder = 28
     OnClick = Button1Click
   end
+  object Memo2: TMemo
+    Left = 73
+    Top = 279
+    Width = 199
+    Height = 89
+    Lines.Strings = (
+      '')
+    TabOrder = 29
+  end
+  object Button2: TButton
+    Left = 72
+    Top = 374
+    Width = 200
+    Height = 33
+    Caption = 'Copiar texto WhatsApp'
+    TabOrder = 30
+    OnClick = Button2Click
+  end
   object DSCardapio: TDataSource
     DataSet = FDQueryCardapio
     OnStateChange = DSCardapioStateChange
-    Left = 144
-    Top = 48
+    Left = 176
+    Top = 8
   end
   object FDQueryCardapio: TFDQuery
     Connection = dm.FDConnection1
     SQL.Strings = (
       'SELECT * FROM TbCardapioDia;')
-    Left = 224
-    Top = 48
+    Left = 256
+    Top = 8
     object FDQueryCardapioDia: TDateField
       FieldName = 'Dia'
       Origin = 'Dia'
@@ -505,7 +523,7 @@ object FormPedido: TFormPedido
     SQL.Strings = (
       
         'SELECT IdPessoa, NomePessoa, Recorrencia, TamanhoPadrao FROM TbP' +
-        'essoas ORDER BY Ordem;')
+        'essoas WHERE Ativa = 1 ORDER BY Ordem;')
     Left = 616
     Top = 16
     object FDQueryPessoaIdPessoa: TFDAutoIncField

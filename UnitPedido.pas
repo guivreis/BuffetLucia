@@ -79,6 +79,8 @@ type
     DBCheckBox2: TDBCheckBox;
     FDQueryPedidoSegOpc: TBooleanField;
     Button1: TButton;
+    Memo2: TMemo;
+    Button2: TButton;
     procedure FormShow(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -99,6 +101,7 @@ type
     procedure DBCheckBox2Click(Sender: TObject);
     procedure DSCardapioStateChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -200,6 +203,11 @@ end;
 procedure TFormPedido.Button1Click(Sender: TObject);
 begin
   FDQueryPedido.Cancel;
+end;
+
+procedure TFormPedido.Button2Click(Sender: TObject);
+begin
+  Clipboard.AsText:=Memo2.Text;
 end;
 
 procedure TFormPedido.Button3Click(Sender: TObject);
@@ -388,6 +396,26 @@ begin
       FDQueryCardapio.Post;
     End;
   End;
+      Memo2.Lines.Clear;
+      Memo2.Lines.Add('O cardápio de hoje é:');
+      if FDQueryCardapioOPC1.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC1.Value+'*');
+      if FDQueryCardapioOPC2.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC2.Value+'*');
+      if FDQueryCardapioOPC3.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC3.Value+'*');
+      if FDQueryCardapioOPC4.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC4.Value+'*');
+      if FDQueryCardapioOPC5.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC5.Value+'*');
+      if FDQueryCardapioOPC6.Value <> '' then
+      Begin
+        Memo2.Lines.Add('');
+        Memo2.Lines.Add('Como segunda opção:');
+        Memo2.Lines.Add('- *'+FDQueryCardapioOPC6.Value+'*');
+      End;
+      Memo2.Lines.Add('');
+      Memo2.Lines.Add('Pode fazer até 2 trocas, por:');
+      Memo2.Lines.Add('- Frango, boi, omelete ou tilápia');
+      Memo2.Lines.Add('- Fritas');
+      Memo2.Lines.Add('- Alface e tomate');
+      Memo2.Lines.Add('');
+      Memo2.Lines.Add('Façam suas escolhas até as 10:40hs e informem o tamanho.');
 end;
 
 end.
