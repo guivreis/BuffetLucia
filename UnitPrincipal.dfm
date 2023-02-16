@@ -2,7 +2,7 @@ object FormPrincipal: TFormPrincipal
   Left = 0
   Top = 0
   Caption = 'Buffet L'#250'cia'
-  ClientHeight = 444
+  ClientHeight = 491
   ClientWidth = 1203
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,16 +14,17 @@ object FormPrincipal: TFormPrincipal
   OnShow = FormShow
   DesignSize = (
     1203
-    444)
+    491)
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 8
     Top = 8
     Width = 185
-    Height = 428
+    Height = 475
     Anchors = [akLeft, akTop, akBottom]
     TabOrder = 0
+    ExplicitHeight = 428
     object Button1: TButton
       Left = 24
       Top = 32
@@ -65,8 +66,9 @@ object FormPrincipal: TFormPrincipal
     Left = 199
     Top = 8
     Width = 996
-    Height = 428
+    Height = 475
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 1
+    ExplicitHeight = 428
   end
 end

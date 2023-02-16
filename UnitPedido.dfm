@@ -88,8 +88,15 @@ object FormPedido: TFormPedido
     Height = 13
     Caption = 'Hora:'
   end
-  object DateTimePicker1: TDateTimePicker
+  object Label9: TLabel
     Left = 8
+    Top = 8
+    Width = 31
+    Height = 13
+    Caption = 'Label9'
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 175
     Top = 8
     Width = 97
     Height = 21
@@ -97,6 +104,7 @@ object FormPedido: TFormPedido
     Time = 0.792449201391718800
     Enabled = False
     TabOrder = 0
+    Visible = False
   end
   object DBEdit1: TDBEdit
     Left = 72
@@ -369,6 +377,7 @@ object FormPedido: TFormPedido
     Top = 279
     Width = 199
     Height = 89
+    Anchors = [akLeft, akTop, akBottom]
     Lines.Strings = (
       '')
     TabOrder = 29
@@ -378,13 +387,14 @@ object FormPedido: TFormPedido
     Top = 374
     Width = 200
     Height = 33
+    Anchors = [akLeft, akBottom]
     Caption = 'Copiar texto WhatsApp'
     TabOrder = 30
     OnClick = Button2Click
   end
   object Button14: TButton
-    Left = 447
-    Top = 239
+    Left = 528
+    Top = 240
     Width = 105
     Height = 25
     Caption = 'Marmitex Fit Boi'
@@ -392,8 +402,8 @@ object FormPedido: TFormPedido
     OnClick = Button14Click
   end
   object Button15: TButton
-    Left = 447
-    Top = 270
+    Left = 528
+    Top = 271
     Width = 105
     Height = 25
     Caption = 'Marmitex Fit Frango'
@@ -401,8 +411,8 @@ object FormPedido: TFormPedido
     OnClick = Button14Click
   end
   object Button16: TButton
-    Left = 447
-    Top = 301
+    Left = 528
+    Top = 302
     Width = 105
     Height = 25
     Caption = 'Marmitex Fit Peixe'
@@ -462,8 +472,8 @@ object FormPedido: TFormPedido
     DataSet = FDQueryPedido
     OnStateChange = DSPedidoStateChange
     OnDataChange = DSPedidoDataChange
-    Left = 568
-    Top = 280
+    Left = 528
+    Top = 336
   end
   object FDQueryPedido: TFDQuery
     Connection = dm.FDConnection1
@@ -475,8 +485,8 @@ object FormPedido: TFormPedido
         'LEFT JOIN (SELECT IdPessoa, NomePessoa, Ordem FROM TbPessoas) ON' +
         ' IdPessoa = Pessoa'
       'ORDER BY Ordem;')
-    Left = 624
-    Top = 280
+    Left = 600
+    Top = 336
     object FDQueryPedidoIdPedido: TFDAutoIncField
       FieldName = 'IdPedido'
       Origin = 'IdPedido'

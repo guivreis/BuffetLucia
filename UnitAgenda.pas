@@ -102,7 +102,6 @@ begin
   dm.Limpa;
   dm.FDQueryTmp.SQL.Add('INSERT INTO TbAgenda (IdAgenda, DataAgenda, Alimento1, Alimento2, Alimento3, Alimento4, Alimento5, Alimento6) VALUES');
   dm.FDQueryTmp.SQL.Add('(NULL, '''+FormatDateTime('YYYY-MM-DD',DateTimePicker1.Date)+''', '+Cod1+', '+Cod2+', '+Cod3+', '+Cod4+', '+Cod5+', '+Cod6+');');
-  ShowMessage(dm.FDQueryTmp.SQL.Text);
   dm.FDQueryTmp.Prepare;
   dm.FDQueryTmp.ExecSQL;
   FDQueryAgenda.Refresh;
@@ -254,6 +253,7 @@ begin
   dm.FDQueryTmp.Last;
   DateTimePicker1.Date:=dm.FDQueryTmp.FieldByName('DataAgenda').AsDateTime;
   DateTimePicker1.Date:=DateTimePicker1.Date+1;
+  if DateTimePicker1.Date<Date then DateTimePicker1.Date:=Date;
   ComboBox1.SetFocus;
 end;
 

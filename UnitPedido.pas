@@ -84,6 +84,7 @@ type
     Button14: TButton;
     Button15: TButton;
     Button16: TButton;
+    Label9: TLabel;
     procedure FormShow(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -106,6 +107,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
+    procedure GeraTextoCardapio;
   private
     { Private declarations }
   public
@@ -120,6 +122,30 @@ Uses
   UnitDm;
 
 {$R *.dfm}
+
+procedure TFormPedido.GeraTextoCardapio;
+Begin
+  Memo2.Lines.Clear;
+  Memo2.Lines.Add('O cardápio de hoje é:');
+  if FDQueryCardapioOPC1.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC1.Value+'*');
+  if FDQueryCardapioOPC2.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC2.Value+'*');
+  if FDQueryCardapioOPC3.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC3.Value+'*');
+  if FDQueryCardapioOPC4.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC4.Value+'*');
+  if FDQueryCardapioOPC5.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC5.Value+'*');
+  if FDQueryCardapioOPC6.Value <> '' then
+  Begin
+    Memo2.Lines.Add('');
+    Memo2.Lines.Add('Como segunda opção:');
+    Memo2.Lines.Add('- *'+FDQueryCardapioOPC6.Value+'*');
+  End;
+  Memo2.Lines.Add('');
+  Memo2.Lines.Add('Pode fazer até 2 trocas, por:');
+  Memo2.Lines.Add('- Frango, boi, omelete ou tilápia');
+  Memo2.Lines.Add('- Fritas');
+  Memo2.Lines.Add('- Alface e tomate');
+  Memo2.Lines.Add('');
+  Memo2.Lines.Add('Façam suas escolhas até as 10:40hs e informem o tamanho.');
+End;
 
 procedure TFormPedido.Atualiza;
 Var
@@ -230,7 +256,9 @@ end;
 
 procedure TFormPedido.Button3Click(Sender: TObject);
 begin
+  FDQueryCardapioDia.Value:=DateTimePicker1.Date;
   FDQueryCardapio.Post;
+  GeraTextoCardapio;
 end;
 
 procedure TFormPedido.Button4Click(Sender: TObject);
@@ -302,6 +330,9 @@ begin
   Button10.Enabled:=DBCheckBox1.Checked;
   Button11.Enabled:=DBCheckBox1.Checked;
   Button12.Enabled:=DBCheckBox1.Checked;
+  Button14.Enabled:=DBCheckBox1.Checked;
+  Button15.Enabled:=DBCheckBox1.Checked;
+  Button16.Enabled:=DBCheckBox1.Checked;
   DBCheckBox2.Enabled:=DBCheckBox1.Checked;
 end;
 
@@ -324,12 +355,13 @@ begin
     FDQueryPedidoPrato3.Value:=DBEdit3.Text;
     FDQueryPedidoPrato4.Value:=DBEdit4.Text;
     FDQueryPedidoPrato5.Value:=DBEdit5.Text;
+    if FDQueryPedidoTamanho.Value='U' then FDQueryPedidoTamanho.Value:=dm.FDConnection1.ExecSQLScalar('SELECT TamanhoPadrao FROM TbPessoas WHERE NomePessoa = '''+DBText1.Caption+''';');
   End;
 end;
 
 procedure TFormPedido.DSCardapioStateChange(Sender: TObject);
 begin
-  if FDQueryCardapio.State = dsEdit then Button3.Enabled:=True else Button3.Enabled:=False;
+  if ((FDQueryCardapio.State = dsEdit) OR (FDQueryCardapio.State = dsInsert)) then Button3.Enabled:=True else Button3.Enabled:=False;
 end;
 
 procedure TFormPedido.DSPedidoDataChange(Sender: TObject; Field: TField);
@@ -345,6 +377,9 @@ begin
   Button10.Enabled:=FDQueryPedidoPedir.Value;
   Button11.Enabled:=FDQueryPedidoPedir.Value;
   Button12.Enabled:=FDQueryPedidoPedir.Value;
+  Button14.Enabled:=FDQueryPedidoPedir.Value;
+  Button15.Enabled:=FDQueryPedidoPedir.Value;
+  Button16.Enabled:=FDQueryPedidoPedir.Value;
   DBCheckBox2.Enabled:=FDQueryPedidoPedir.Value;
   if FDQueryPedido.RecNo = 1 then Button6.Enabled:=False else Button6.Enabled:=True;
   if FDQueryPedido.RecNo = FDQueryPedido.RecordCount then Button5.Enabled:=False else Button5.Enabled:=True;
@@ -414,26 +449,8 @@ begin
       FDQueryCardapio.Post;
     End;
   End;
-      Memo2.Lines.Clear;
-      Memo2.Lines.Add('O cardápio de hoje é:');
-      if FDQueryCardapioOPC1.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC1.Value+'*');
-      if FDQueryCardapioOPC2.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC2.Value+'*');
-      if FDQueryCardapioOPC3.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC3.Value+'*');
-      if FDQueryCardapioOPC4.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC4.Value+'*');
-      if FDQueryCardapioOPC5.Value <> '' then Memo2.Lines.Add('- *'+FDQueryCardapioOPC5.Value+'*');
-      if FDQueryCardapioOPC6.Value <> '' then
-      Begin
-        Memo2.Lines.Add('');
-        Memo2.Lines.Add('Como segunda opção:');
-        Memo2.Lines.Add('- *'+FDQueryCardapioOPC6.Value+'*');
-      End;
-      Memo2.Lines.Add('');
-      Memo2.Lines.Add('Pode fazer até 2 trocas, por:');
-      Memo2.Lines.Add('- Frango, boi, omelete ou tilápia');
-      Memo2.Lines.Add('- Fritas');
-      Memo2.Lines.Add('- Alface e tomate');
-      Memo2.Lines.Add('');
-      Memo2.Lines.Add('Façam suas escolhas até as 10:40hs e informem o tamanho.');
+  if DBEdit1.Text<>'' then GeraTextoCardapio;
+  Label9.Caption:=FormatDateTime('DD/MM/YYYY',Date);
 end;
 
 end.
