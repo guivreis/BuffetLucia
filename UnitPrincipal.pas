@@ -137,8 +137,8 @@ begin
       dm.FDConnection1.Params.Database:=Arquivo;
       dm.FDConnection1.Connected:=True;
       dm.Limpa;
-      dm.FDQueryTmp.SQL.Add('CREATE TABLE TbPessoas (IdPessoa INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NomePessoa TEXT (40) NOT NULL, Recorrencia TEXT (7) NOT NULL, TamanhoPadrao TEXT (1) NOT NULL, Ativa BOOLEAN);');
-      dm.FDQueryTmp.SQL.Add('CREATE TABLE TbTipos (IdTipo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NomeTipo TEXT (15) NOT NULL);');
+      dm.FDQueryTmp.SQL.Add('CREATE TABLE TbPessoas (IdPessoa INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NomePessoa TEXT (40) NOT NULL, Recorrencia TEXT (7) NOT NULL, TamanhoPadrao TEXT (1) NOT NULL, Ativa BOOLEAN, Ordem INTEGER);');
+      dm.FDQueryTmp.SQL.Add('CREATE TABLE TbTipos (IdTipo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NomeTipo TEXT (20) NOT NULL);');
       dm.FDQueryTmp.SQL.Add('CREATE TABLE TbAlimentos (IdAlimento INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NomeAlimento TEXT (40) NOT NULL, Tipo INTEGER NOT NULL, Ativo BOOLEAN);');
       dm.FDQueryTmp.SQL.Add('CREATE TABLE TbAgenda (IdAgenda INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, DataAgenda DATE NOT NULL, Alimento1 INTEGER REFERENCES TbAlimentos (IdAlimento), Alimento2 INTEGER REFERENCES TbAlimentos (IdAlimento),');
       dm.FDQueryTmp.SQL.Add('Alimento3 INTEGER REFERENCES TbAlimentos (IdAlimento), Alimento4 INTEGER REFERENCES TbAlimentos (IdAlimento), Alimento5 INTEGER REFERENCES TbAlimentos (IdAlimento), Alimento6 INTEGER REFERENCES TbAlimentos (IdAlimento));');
