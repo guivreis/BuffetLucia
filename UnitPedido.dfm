@@ -398,7 +398,7 @@ object FormPedido: TFormPedido
     Height = 25
     Caption = 'Marmitex Fit Frango'
     TabOrder = 32
-    OnClick = Button15Click
+    OnClick = Button14Click
   end
   object Button16: TButton
     Left = 447
@@ -407,7 +407,7 @@ object FormPedido: TFormPedido
     Height = 25
     Caption = 'Marmitex Fit Peixe'
     TabOrder = 33
-    OnClick = Button16Click
+    OnClick = Button14Click
   end
   object DSCardapio: TDataSource
     DataSet = FDQueryCardapio

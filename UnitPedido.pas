@@ -106,8 +106,6 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
-    procedure Button15Click(Sender: TObject);
-    procedure Button16Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -213,31 +211,7 @@ begin
   FDQueryPedido.Edit;
   FDQueryPedidoSegOpc.Value:=True;
   FDQueryPedidoTamanho.Value:='U';
-  FDQueryPedidoPrato1.Value:=Button14.Caption;
-  FDQueryPedidoPrato2.Value:='';
-  FDQueryPedidoPrato3.Value:='';
-  FDQueryPedidoPrato4.Value:='';
-  FDQueryPedidoPrato5.Value:='';
-end;
-
-procedure TFormPedido.Button15Click(Sender: TObject);
-begin
-  FDQueryPedido.Edit;
-  FDQueryPedidoSegOpc.Value:=True;
-  FDQueryPedidoTamanho.Value:='U';
-  FDQueryPedidoPrato1.Value:=Button15.Caption;
-  FDQueryPedidoPrato2.Value:='';
-  FDQueryPedidoPrato3.Value:='';
-  FDQueryPedidoPrato4.Value:='';
-  FDQueryPedidoPrato5.Value:='';
-end;
-
-procedure TFormPedido.Button16Click(Sender: TObject);
-begin
-  FDQueryPedido.Edit;
-  FDQueryPedidoSegOpc.Value:=True;
-  FDQueryPedidoTamanho.Value:='U';
-  FDQueryPedidoPrato1.Value:=Button16.Caption;
+  FDQueryPedidoPrato1.Value:=(Sender as TButton).Caption;
   FDQueryPedidoPrato2.Value:='';
   FDQueryPedidoPrato3.Value:='';
   FDQueryPedidoPrato4.Value:='';
