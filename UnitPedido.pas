@@ -81,6 +81,9 @@ type
     Button1: TButton;
     Memo2: TMemo;
     Button2: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    Button16: TButton;
     procedure FormShow(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -102,6 +105,9 @@ type
     procedure DSCardapioStateChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -132,7 +138,9 @@ Begin
   dm.FDQueryTmp.FetchAll;
   while not dm.FDQueryTmp.EOF do
   Begin
-    if dm.FDQueryTmp.FieldByName('Tamanho').Value = 'P' then Tamanho:='pequeno' else Tamanho:='grande';
+    if dm.FDQueryTmp.FieldByName('Tamanho').Value = 'P' then Tamanho:='pequeno' else
+    if dm.FDQueryTmp.FieldByName('Tamanho').Value = 'G' then Tamanho:='grande' else Tamanho:='';
+    if Tamanho='' then Memo1.Lines.Add(IntToStr(NPedido+1)+') '+dm.FDQueryTmp.FieldByName('NomePessoa').Value+':') else
     Memo1.Lines.Add(IntToStr(NPedido+1)+') '+dm.FDQueryTmp.FieldByName('NomePessoa').Value+' (tamanho '+tamanho+'):');
     if dm.FDQueryTmp.FieldByName('Prato1').Value <> '' then
     Begin
@@ -198,6 +206,42 @@ end;
 procedure TFormPedido.Button13Click(Sender: TObject);
 begin
   Clipboard.AsText:=Memo1.Text;
+end;
+
+procedure TFormPedido.Button14Click(Sender: TObject);
+begin
+  FDQueryPedido.Edit;
+  FDQueryPedidoSegOpc.Value:=True;
+  FDQueryPedidoTamanho.Value:='U';
+  FDQueryPedidoPrato1.Value:=Button14.Caption;
+  FDQueryPedidoPrato2.Value:='';
+  FDQueryPedidoPrato3.Value:='';
+  FDQueryPedidoPrato4.Value:='';
+  FDQueryPedidoPrato5.Value:='';
+end;
+
+procedure TFormPedido.Button15Click(Sender: TObject);
+begin
+  FDQueryPedido.Edit;
+  FDQueryPedidoSegOpc.Value:=True;
+  FDQueryPedidoTamanho.Value:='U';
+  FDQueryPedidoPrato1.Value:=Button15.Caption;
+  FDQueryPedidoPrato2.Value:='';
+  FDQueryPedidoPrato3.Value:='';
+  FDQueryPedidoPrato4.Value:='';
+  FDQueryPedidoPrato5.Value:='';
+end;
+
+procedure TFormPedido.Button16Click(Sender: TObject);
+begin
+  FDQueryPedido.Edit;
+  FDQueryPedidoSegOpc.Value:=True;
+  FDQueryPedidoTamanho.Value:='U';
+  FDQueryPedidoPrato1.Value:=Button16.Caption;
+  FDQueryPedidoPrato2.Value:='';
+  FDQueryPedidoPrato3.Value:='';
+  FDQueryPedidoPrato4.Value:='';
+  FDQueryPedidoPrato5.Value:='';
 end;
 
 procedure TFormPedido.Button1Click(Sender: TObject);

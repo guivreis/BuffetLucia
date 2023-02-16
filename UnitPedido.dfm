@@ -225,11 +225,13 @@ object FormPedido: TFormPedido
     DataSource = DSPedido
     Items.Strings = (
       'Pequeno'
-      'Grande')
+      'Grande'
+      #218'nico')
     TabOrder = 14
     Values.Strings = (
       'P'
-      'G')
+      'G'
+      'U')
   end
   object Button5: TButton
     Left = 558
@@ -344,7 +346,7 @@ object FormPedido: TFormPedido
   end
   object DBCheckBox2: TDBCheckBox
     Left = 352
-    Top = 328
+    Top = 332
     Width = 161
     Height = 17
     Caption = 'Selecionar segunda op'#231#227'o'
@@ -379,6 +381,33 @@ object FormPedido: TFormPedido
     Caption = 'Copiar texto WhatsApp'
     TabOrder = 30
     OnClick = Button2Click
+  end
+  object Button14: TButton
+    Left = 447
+    Top = 239
+    Width = 105
+    Height = 25
+    Caption = 'Marmitex Fit Boi'
+    TabOrder = 31
+    OnClick = Button14Click
+  end
+  object Button15: TButton
+    Left = 447
+    Top = 270
+    Width = 105
+    Height = 25
+    Caption = 'Marmitex Fit Frango'
+    TabOrder = 32
+    OnClick = Button15Click
+  end
+  object Button16: TButton
+    Left = 447
+    Top = 301
+    Width = 105
+    Height = 25
+    Caption = 'Marmitex Fit Peixe'
+    TabOrder = 33
+    OnClick = Button16Click
   end
   object DSCardapio: TDataSource
     DataSet = FDQueryCardapio
