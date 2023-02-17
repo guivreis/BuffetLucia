@@ -96,6 +96,7 @@ object FormAlimentos: TFormAlimentos
     EditLabel.Width = 45
     EditLabel.Height = 13
     EditLabel.Caption = 'Alimento:'
+    MaxLength = 60
     TabOrder = 1
   end
   object Panel1: TPanel
@@ -197,10 +198,11 @@ object FormAlimentos: TFormAlimentos
       ReadOnly = True
     end
     object FDQueryAlimentosNomeAlimento: TWideStringField
+      DisplayWidth = 60
       FieldName = 'NomeAlimento'
       Origin = 'NomeAlimento'
       Required = True
-      Size = 40
+      Size = 60
     end
     object FDQueryAlimentosTipo: TIntegerField
       FieldName = 'Tipo'

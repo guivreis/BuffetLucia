@@ -155,6 +155,7 @@ object FormAgenda: TFormAgenda
     Top = 64
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 4
     OnClick = ComboBox1Click
   end
@@ -163,6 +164,7 @@ object FormAgenda: TFormAgenda
     Top = 91
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 5
     OnClick = ComboBox2Click
   end
@@ -171,6 +173,7 @@ object FormAgenda: TFormAgenda
     Top = 118
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 6
     OnClick = ComboBox3Click
   end
@@ -179,6 +182,7 @@ object FormAgenda: TFormAgenda
     Top = 145
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 7
     OnClick = ComboBox4Click
   end
@@ -187,6 +191,7 @@ object FormAgenda: TFormAgenda
     Top = 172
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 8
     OnClick = ComboBox5Click
   end
@@ -195,6 +200,7 @@ object FormAgenda: TFormAgenda
     Top = 199
     Width = 187
     Height = 21
+    MaxLength = 60
     TabOrder = 9
     OnClick = ComboBox6Click
   end

@@ -113,6 +113,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC1'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 1
   end
   object DBEdit2: TDBEdit
@@ -122,6 +123,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC2'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 2
   end
   object DBEdit3: TDBEdit
@@ -131,6 +133,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC3'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 3
   end
   object DBEdit4: TDBEdit
@@ -140,6 +143,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC4'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 4
   end
   object DBEdit5: TDBEdit
@@ -149,6 +153,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC5'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 5
   end
   object DBEdit6: TDBEdit
@@ -158,6 +163,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC6'
     DataSource = DSCardapio
+    MaxLength = 60
     TabOrder = 6
   end
   object Button3: TButton
@@ -185,6 +191,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato1'
     DataSource = DSPedido
+    MaxLength = 60
     TabOrder = 9
   end
   object DBEdit8: TDBEdit
@@ -194,6 +201,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato2'
     DataSource = DSPedido
+    MaxLength = 60
     TabOrder = 10
   end
   object DBEdit9: TDBEdit
@@ -203,6 +211,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato3'
     DataSource = DSPedido
+    MaxLength = 60
     TabOrder = 11
   end
   object DBEdit10: TDBEdit
@@ -212,6 +221,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato4'
     DataSource = DSPedido
+    MaxLength = 60
     TabOrder = 12
   end
   object DBEdit11: TDBEdit
@@ -221,6 +231,7 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato5'
     DataSource = DSPedido
+    MaxLength = 60
     TabOrder = 13
   end
   object DBRadioGroup1: TDBRadioGroup
@@ -438,34 +449,36 @@ object FormPedido: TFormPedido
       Required = True
     end
     object FDQueryCardapioOPC1: TWideStringField
+      DisplayWidth = 60
       FieldName = 'OPC1'
       Origin = 'OPC1'
-      Size = 40
+      Size = 60
     end
     object FDQueryCardapioOPC2: TWideStringField
       FieldName = 'OPC2'
       Origin = 'OPC2'
-      Size = 40
+      Size = 60
     end
     object FDQueryCardapioOPC3: TWideStringField
+      DisplayWidth = 60
       FieldName = 'OPC3'
       Origin = 'OPC3'
-      Size = 40
+      Size = 60
     end
     object FDQueryCardapioOPC4: TWideStringField
       FieldName = 'OPC4'
       Origin = 'OPC4'
-      Size = 40
+      Size = 60
     end
     object FDQueryCardapioOPC5: TWideStringField
       FieldName = 'OPC5'
       Origin = 'OPC5'
-      Size = 40
+      Size = 60
     end
     object FDQueryCardapioOPC6: TWideStringField
       FieldName = 'OPC6'
       Origin = 'OPC6'
-      Size = 40
+      Size = 60
     end
   end
   object DSPedido: TDataSource
@@ -517,27 +530,27 @@ object FormPedido: TFormPedido
     object FDQueryPedidoPrato1: TWideStringField
       FieldName = 'Prato1'
       Origin = 'Prato1'
-      Size = 40
+      Size = 60
     end
     object FDQueryPedidoPrato2: TWideStringField
       FieldName = 'Prato2'
       Origin = 'Prato2'
-      Size = 40
+      Size = 60
     end
     object FDQueryPedidoPrato3: TWideStringField
       FieldName = 'Prato3'
       Origin = 'Prato3'
-      Size = 40
+      Size = 60
     end
     object FDQueryPedidoPrato4: TWideStringField
       FieldName = 'Prato4'
       Origin = 'Prato4'
-      Size = 40
+      Size = 60
     end
     object FDQueryPedidoPrato5: TWideStringField
       FieldName = 'Prato5'
       Origin = 'Prato5'
-      Size = 40
+      Size = 60
     end
     object FDQueryPedidoNomePessoa: TWideStringField
       AutoGenerateValue = arDefault
