@@ -85,6 +85,7 @@ type
     Button15: TButton;
     Button16: TButton;
     Label9: TLabel;
+    Button17: TButton;
     procedure FormShow(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -108,6 +109,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
     procedure GeraTextoCardapio;
+    procedure Button17Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -242,6 +244,11 @@ begin
   FDQueryPedidoPrato3.Value:='';
   FDQueryPedidoPrato4.Value:='';
   FDQueryPedidoPrato5.Value:='';
+end;
+
+procedure TFormPedido.Button17Click(Sender: TObject);
+begin
+  DBEdit5.SetFocus;
 end;
 
 procedure TFormPedido.Button1Click(Sender: TObject);

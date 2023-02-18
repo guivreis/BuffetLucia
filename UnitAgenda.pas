@@ -108,11 +108,14 @@ begin
   if DayOfWeek(DateTimePicker1.Date)=7 then DateTimePicker1.Date:=DateTimePicker1.Date+2 else DateTimePicker1.Date:=DateTimePicker1.Date+1;
   DateTimePicker1.DateFormat:=dfLong;
   DateTimePicker1.DateFormat:=dfShort;
-  ComboBox1.ItemIndex:=-1;
-  ComboBox2.ItemIndex:=-1;
+  ComboBox1.ItemIndex:=ComboBox1.Items.IndexOf('Arroz');
+  if ComboBox1.ItemIndex <> -1 then Cod1:=IntToStr(Integer(ComboBox1.Items.Objects[ComboBox1.ItemIndex]));
+  ComboBox2.ItemIndex:=ComboBox2.Items.IndexOf('Feijão');
+  if ComboBox2.ItemIndex <> -1 then Cod2:=IntToStr(Integer(ComboBox2.Items.Objects[ComboBox2.ItemIndex]));
   ComboBox3.ItemIndex:=-1;
   ComboBox4.ItemIndex:=-1;
-  ComboBox5.ItemIndex:=-1;
+  ComboBox5.ItemIndex:=ComboBox5.Items.IndexOf('Salada');
+  if ComboBox5.ItemIndex <> -1 then Cod5:=IntToStr(Integer(ComboBox5.Items.Objects[ComboBox5.ItemIndex]));
   ComboBox6.ItemIndex:=-1;
   ComboBox1.SetFocus;
 end;
@@ -254,6 +257,12 @@ begin
   DateTimePicker1.Date:=dm.FDQueryTmp.FieldByName('DataAgenda').AsDateTime;
   DateTimePicker1.Date:=DateTimePicker1.Date+1;
   if DateTimePicker1.Date<Date then DateTimePicker1.Date:=Date;
+  ComboBox1.ItemIndex:=ComboBox1.Items.IndexOf('Arroz');
+  if ComboBox1.ItemIndex <> -1 then Cod1:=IntToStr(Integer(ComboBox1.Items.Objects[ComboBox1.ItemIndex]));
+  ComboBox2.ItemIndex:=ComboBox2.Items.IndexOf('Feijão');
+  if ComboBox2.ItemIndex <> -1 then Cod2:=IntToStr(Integer(ComboBox2.Items.Objects[ComboBox2.ItemIndex]));
+  ComboBox5.ItemIndex:=ComboBox5.Items.IndexOf('Salada');
+  if ComboBox5.ItemIndex <> -1 then Cod5:=IntToStr(Integer(ComboBox5.Items.Objects[ComboBox5.ItemIndex]));
   ComboBox1.SetFocus;
 end;
 

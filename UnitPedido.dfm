@@ -113,7 +113,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC1'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 1
   end
   object DBEdit2: TDBEdit
@@ -123,7 +122,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC2'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 2
   end
   object DBEdit3: TDBEdit
@@ -133,7 +131,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC3'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 3
   end
   object DBEdit4: TDBEdit
@@ -143,7 +140,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC4'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 4
   end
   object DBEdit5: TDBEdit
@@ -153,7 +149,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC5'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 5
   end
   object DBEdit6: TDBEdit
@@ -163,7 +158,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'OPC6'
     DataSource = DSCardapio
-    MaxLength = 60
     TabOrder = 6
   end
   object Button3: TButton
@@ -191,7 +185,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato1'
     DataSource = DSPedido
-    MaxLength = 60
     TabOrder = 9
   end
   object DBEdit8: TDBEdit
@@ -201,7 +194,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato2'
     DataSource = DSPedido
-    MaxLength = 60
     TabOrder = 10
   end
   object DBEdit9: TDBEdit
@@ -211,7 +203,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato3'
     DataSource = DSPedido
-    MaxLength = 60
     TabOrder = 11
   end
   object DBEdit10: TDBEdit
@@ -221,7 +212,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato4'
     DataSource = DSPedido
-    MaxLength = 60
     TabOrder = 12
   end
   object DBEdit11: TDBEdit
@@ -231,7 +221,6 @@ object FormPedido: TFormPedido
     Height = 21
     DataField = 'Prato5'
     DataSource = DSPedido
-    MaxLength = 60
     TabOrder = 13
   end
   object DBRadioGroup1: TDBRadioGroup
@@ -429,6 +418,15 @@ object FormPedido: TFormPedido
     Caption = 'Marmitex Fit Peixe'
     TabOrder = 33
     OnClick = Button14Click
+  end
+  object Button17: TButton
+    Left = 278
+    Top = 170
+    Width = 43
+    Height = 25
+    Caption = 'Editar'
+    TabOrder = 34
+    OnClick = Button17Click
   end
   object DSCardapio: TDataSource
     DataSet = FDQueryCardapio
