@@ -255,7 +255,7 @@ begin
   dm.FDQueryTmp.FetchAll;
   dm.FDQueryTmp.Last;
   DateTimePicker1.Date:=dm.FDQueryTmp.FieldByName('DataAgenda').AsDateTime;
-  DateTimePicker1.Date:=DateTimePicker1.Date+1;
+  if DayOfWeek(DateTimePicker1.Date)=7 then DateTimePicker1.Date:=DateTimePicker1.Date+2 else DateTimePicker1.Date:=DateTimePicker1.Date+1;
   if DateTimePicker1.Date<Date then DateTimePicker1.Date:=Date;
   ComboBox1.ItemIndex:=ComboBox1.Items.IndexOf('Arroz');
   if ComboBox1.ItemIndex <> -1 then Cod1:=IntToStr(Integer(ComboBox1.Items.Objects[ComboBox1.ItemIndex]));

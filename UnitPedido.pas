@@ -212,6 +212,7 @@ procedure TFormPedido.Button10Click(Sender: TObject);
 begin
   FDQueryPedido.Edit;
   FDQueryPedidoPrato3.Value:='';
+  DBEdit9.SetFocus;
 //  FDQueryPedido.Post;
 end;
 
@@ -219,6 +220,7 @@ procedure TFormPedido.Button11Click(Sender: TObject);
 begin
   FDQueryPedido.Edit;
   FDQueryPedidoPrato4.Value:='';
+  DBEdit10.SetFocus;
 //  FDQueryPedido.Post;
 end;
 
@@ -226,6 +228,7 @@ procedure TFormPedido.Button12Click(Sender: TObject);
 begin
   FDQueryPedido.Edit;
   FDQueryPedidoPrato5.Value:='';
+  DBEdit11.SetFocus;
 //  FDQueryPedido.Post;
 end;
 
@@ -314,6 +317,7 @@ procedure TFormPedido.Button8Click(Sender: TObject);
 begin
   FDQueryPedido.Edit;
   FDQueryPedidoPrato1.Value:='';
+  DBEdit7.SetFocus;
 //  FDQueryPedido.Post;
 end;
 
@@ -321,6 +325,7 @@ procedure TFormPedido.Button9Click(Sender: TObject);
 begin
   FDQueryPedido.Edit;
   FDQueryPedidoPrato2.Value:='';
+  DBEdit8.SetFocus;
 //  FDQueryPedido.Post;
 end;
 

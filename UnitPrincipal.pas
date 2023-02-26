@@ -4,7 +4,10 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, IniFiles, MidasLib;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, IniFiles, MidasLib,
+  FireDAC.Stan.Def, FireDAC.VCLUI.Wait, FireDAC.Stan.Intf, FireDAC.Phys,
+  FireDAC.Phys.SQLite, FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef;
 
 type
   TFormPrincipal = class(TForm)
@@ -14,6 +17,8 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
+    FDSQLiteBackup1: TFDSQLiteBackup;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     procedure FormShow(Sender: TObject);
     procedure FechaFormularios;
     procedure AbreFormulario(NomeForm: TForm);
@@ -109,6 +114,7 @@ Var
   Iniconf : TInifile;
   Caminho : String;
   Arquivo : String;
+  Arquivobk: String;
   Msg: String;
 begin
   dm.FDConnection1.Params.Database:='';
@@ -117,10 +123,15 @@ begin
   Begin
     Iniconf:=TInifile.Create(ExtractFilePath(Application.ExeName) + 'Config.ini');
     Arquivo:=Iniconf.ReadString('Config', 'Caminho', '');
+    Arquivobk:=Iniconf.ReadString('Config', 'Backup', '');
     Iniconf.Free;
     dm.FDConnection1.Connected:=False;
     dm.FDConnection1.Params.Database:=Arquivo;
     dm.FDConnection1.Connected:=True;
+    FDSQLiteBackup1.DataBase:=Arquivo;
+    FDSQLiteBackup1.DestDatabase:=Arquivobk;
+    FDSQLiteBackup1.Backup;
+    FDSQLiteBackup1.Free;
   End
   else
   Begin
@@ -130,8 +141,10 @@ begin
     if Application.MessageBox(PChar(Msg),'Configurações iniciais',mb_yesno+mb_defbutton2) = id_yes then
     Begin
       Arquivo:=ExtractFilePath(Application.ExeName) + 'dbBuffetLucia.db';
+      Arquivobk:=ExtractFilePath(Application.ExeName) + 'dbBackup.db';
       Iniconf:=TInifile.Create(ExtractFilePath(Application.ExeName) + 'Config.ini');
       Iniconf.WriteString('Config', 'Caminho', Arquivo);
+      Iniconf.WriteString('Config', 'Backup', Arquivobk);
       Iniconf.Free;
       dm.FDConnection1.Connected:=False;
       dm.FDConnection1.Params.Database:=Arquivo;

@@ -31,6 +31,11 @@ object FormPessoas: TFormPessoas
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+    OnColEnter = DBGrid1ColEnter
+    OnColExit = DBGrid1ColExit
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    OnKeyDown = DBGrid1KeyDown
     Columns = <
       item
         Expanded = False
@@ -124,6 +129,7 @@ object FormPessoas: TFormPessoas
     object FDQueryPessoasAtiva: TBooleanField
       FieldName = 'Ativa'
       Origin = 'Ativa'
+      OnGetText = FDQueryPessoasAtivaGetText
     end
   end
 end

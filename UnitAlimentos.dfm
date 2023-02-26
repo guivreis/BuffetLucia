@@ -69,11 +69,17 @@ object FormAlimentos: TFormAlimentos
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+    OnColEnter = DBGrid1ColEnter
+    OnColExit = DBGrid1ColExit
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    OnKeyDown = DBGrid1KeyDown
     Columns = <
       item
         Expanded = False
         FieldName = 'NomeAlimento'
         Title.Caption = 'Alimento'
+        Width = 250
         Visible = True
       end
       item
@@ -212,6 +218,7 @@ object FormAlimentos: TFormAlimentos
     object FDQueryAlimentosAtivo: TBooleanField
       FieldName = 'Ativo'
       Origin = 'Ativo'
+      OnGetText = FDQueryAlimentosAtivoGetText
     end
     object FDQueryAlimentosNomeTipo: TStringField
       FieldKind = fkLookup

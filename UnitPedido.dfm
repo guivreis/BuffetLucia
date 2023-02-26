@@ -2,7 +2,7 @@ object FormPedido: TFormPedido
   Left = 0
   Top = 0
   Caption = 'Pedido do dia'
-  ClientHeight = 421
+  ClientHeight = 585
   ClientWidth = 980
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,7 +15,7 @@ object FormPedido: TFormPedido
   OnShow = FormShow
   DesignSize = (
     980
-    421)
+    585)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -326,23 +326,25 @@ object FormPedido: TFormPedido
   end
   object Button13: TButton
     Left = 680
-    Top = 374
+    Top = 538
     Width = 281
     Height = 33
     Anchors = [akLeft, akBottom]
     Caption = 'Copiar texto WhatsApp'
     TabOrder = 24
     OnClick = Button13Click
+    ExplicitTop = 504
   end
   object Memo1: TMemo
     Left = 680
     Top = 60
     Width = 281
-    Height = 308
+    Height = 472
     Anchors = [akLeft, akTop, akBottom]
     Lines.Strings = (
       '')
     TabOrder = 25
+    ExplicitHeight = 438
   end
   object Edit1: TEdit
     Left = 713
@@ -376,21 +378,23 @@ object FormPedido: TFormPedido
     Left = 73
     Top = 279
     Width = 199
-    Height = 89
+    Height = 253
     Anchors = [akLeft, akTop, akBottom]
     Lines.Strings = (
       '')
     TabOrder = 29
+    ExplicitHeight = 219
   end
   object Button2: TButton
     Left = 72
-    Top = 374
+    Top = 538
     Width = 200
     Height = 33
     Anchors = [akLeft, akBottom]
     Caption = 'Copiar texto WhatsApp'
     TabOrder = 30
     OnClick = Button2Click
+    ExplicitTop = 504
   end
   object Button14: TButton
     Left = 528
